@@ -1,0 +1,37 @@
+repositories:
+  ros2_openvino_toolkit:
+    type: git
+    url: https://github.com/Adlink-ROS/ros2_openvino_toolkit
+    version: adlink-dashing
+  ros2_object_msgs:
+    type: git
+    url: https://github.com/Adlink-ROS/ros2_object_msgs.git
+    version: master
+  ros2_object_analytics:
+    type: git
+    url: https://github.com/Adlink-ROS/ros2_object_analytics.git
+    version: dashing-devel
+  ros2_intel_realsense:
+    type: git
+    url: https://github.com/intel/ros2_intel_realsense.git
+    version: dashing    
+  tf_ai_tracker:
+    type: git
+    url: https://github.com/Adlink-ROS/tf_ai_tracker.git
+    version: dashing-devel
+  oa_target_extractor:
+    type: git
+    url: https://github.com/Adlink-ROS/oa_target_extractor.git
+    version: dashing-devel
+  vision_opencv:
+    type: git
+    url: https://github.com/ros-perception/vision_opencv
+    version: dashing
+  message_filters:
+    type: git
+    url: https://github.com/ros2/message_filters.git
+    version: dashing
+  image_common:
+    type: git
+    url: https://github.com/ros-perception/image_common.git
+    version: dashing    
