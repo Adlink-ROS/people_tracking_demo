@@ -3,6 +3,7 @@
 ## Prerequisite
 - Ubuntu 18.04 Desktop
 - ROS 2 Dashing
+- OpenCV 3.3
 - Intel® OpenVINO™ Toolkit 2019 R3.1 (2019.3.376)
 - Intel® RealSense™ D435 and its library
 ---
@@ -50,7 +51,7 @@ cd /opt/intel/openvino/deployment_tools/model_optimizer/install_prerequisites
 sudo ./install_prerequisites.sh
 ```
 
-## Building and Installing the Inference Engines of OpenVINO
+## Build and Install the Inference Engines of OpenVINO
 
 **root** is required instead of sudo
 
@@ -65,6 +66,33 @@ make
 exit
 ```
 
+## Download and Build OpenCV 3.3
+
+Prepare the dependencies before building OpenCV
+
+```bash
+sudo apt-get install build-essential
+sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+ cd ~/code
+```
+
+Build OpenCV
+
+```bash
+ mkdir ~/opencv3
+ cd ~/opencv3
+ git clone https://github.com/opencv/opencv.git
+ git clone https://github.com/opencv/opencv_contrib.git
+ cd opencv && git checkout 3.4.2 && cd ..
+ cd opencv_contrib && git checkout 3.4.2 && cd ..
+ cd opencv
+ mkdir build && cd build
+ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=$HOME/opencv3/opencv_contrib/modules/ ..
+ make -j8
+ sudo make install
+```
+
 ## Setup OpenVINO Environment
 
 Add below environment variables into ~/.openvino_bashrc
@@ -73,6 +101,7 @@ Add below environment variables into ~/.openvino_bashrc
 echo 'source /opt/intel/openvino/bin/setupvars.sh' > ~/.openvino_bashrc
 echo "export CPU_EXTENSION_LIB=/opt/intel/openvino/deployment_tools/inference_engine/samples/build/intel64/Release/lib/libcpu_extension.so" >> ~/.openvino_bashrc
 echo "export GFLAGS_LIB=/opt/intel/openvino/deployment_tools/inference_engine/samples/build/intel64/Release/lib/libgflags_nothreads.a"  >> ~/.openvino_bashrc
+echo "export OpenCV_DIR=$HOME/opencv3/opencv/cmake" >> ~/.openvino_bashrc
 ```
 
 ## Install the Packages needed by People Tracking
