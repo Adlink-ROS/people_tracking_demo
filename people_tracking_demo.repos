@@ -1,4 +1,8 @@
 repositories:
+  people_tracking_launcher:
+    type: git
+    url: https://github.com/Adlink-ROS/people_tracking_launcher.git
+    version: dashing-devel
   ros2_openvino_toolkit:
     type: git
     url: https://github.com/Adlink-ROS/ros2_openvino_toolkit
