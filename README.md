@@ -133,11 +133,9 @@ source ~/.openvino_bashrc
 source ~/ros2_people_tracking_ws/install/local_setup.bash
 
 # Bringup the packages
-ros2 run tf_ai_tracker target_tracker2
-ros2 run oa_target_extractor oa_target_extractor
-ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 world camera_color_optical_frame
-ros2 launch object_analytics_node object_analytics_sample.launch.py open_rviz:=true
 ros2 launch dynamic_vino_sample ros2_openvino_oa.launch.py
+ros2 launch object_analytics_node object_analytics_sample.launch.py open_rviz:=true
+ros2 launch people_tracking_launcher bringup_launch.py
 ```
 
 ### Bringup Your Robot
