@@ -15,9 +15,9 @@ repositories:
     type: git
     url: https://github.com/intel/ros2_intel_realsense.git
     version: dashing    
-  tf_ai_tracker:
+  robot_tracking_controller:
     type: git
-    url: https://github.com/Adlink-ROS/tf_ai_tracker.git
+    url: https://github.com/Adlink-ROS/robot_tracking_controller.git
     version: dashing-devel
   oa_target_extractor:
     type: git
