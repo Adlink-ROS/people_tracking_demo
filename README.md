@@ -127,14 +127,20 @@ colcon build --symlink-install --cmake-args '-DCMAKE_BUILD_TYPE=Release'
 ### Run People Tracking Packages
 
 ```bash
-# Source all the environment
+# Remember to source all the environment for each terminals
 source /opt/ros/dashing/setup.bash
 source ~/.openvino_bashrc
 source ~/ros2_people_tracking_ws/install/local_setup.bash
 
-# Bringup the packages
+# Bringup the packages:
+
+# Terminal 1
 ros2 launch dynamic_vino_sample ros2_openvino_oa.launch.py
+
+# Terminal 2
 ros2 launch object_analytics_node object_analytics_sample.launch.py open_rviz:=true
+
+# Terminal 3
 ros2 launch people_tracking_launcher bringup_launch.py
 ```
 
