@@ -111,7 +111,7 @@ echo "export OpenCV_DIR=$HOME/opencv3/opencv/cmake" >> ~/.openvino_bashrc
 mkdir -p ~/ros2_people_tracking_ws/src
 cd ~/ros2_people_tracking_ws
 wget https://raw.githubusercontent.com/Adlink-ROS/people_tracking_demo/dashing-devel/people_tracking_demo.repos
-vcs import -- src < people_tracking_demo.repos
+vcs import --debug src < people_tracking_demo.repos
 ```
 
 ### Build packages
