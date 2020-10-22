@@ -79,17 +79,17 @@ sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libp
 Build OpenCV
 
 ```bash
- mkdir ~/opencv3
- cd ~/opencv3
- git clone https://github.com/opencv/opencv.git
- git clone https://github.com/opencv/opencv_contrib.git
- cd opencv && git checkout 3.4.2 && cd ..
- cd opencv_contrib && git checkout 3.4.2 && cd ..
- cd opencv
- mkdir build && cd build
- cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=$HOME/opencv3/opencv_contrib/modules/ ..
- make -j8
- sudo make install
+mkdir ~/opencv3
+cd ~/opencv3
+git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git
+cd opencv && git checkout 3.4.2 && cd ..
+cd opencv_contrib && git checkout 3.4.2 && cd ..
+cd opencv
+mkdir build && cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=$HOME/opencv3/opencv_contrib/modules/ ..
+make -j8
+sudo make install
 ```
 
 ## Setup OpenVINO Environment
