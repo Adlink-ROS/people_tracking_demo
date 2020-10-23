@@ -66,7 +66,7 @@ make
 exit
 ```
 
-## Download and Build OpenCV 3.3
+## Download and Build OpenCV 3.4
 
 Prepare the dependencies before building OpenCV
 
